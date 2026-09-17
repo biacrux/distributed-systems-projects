@@ -1,0 +1,35 @@
+# WARNING: Modifying this file will result in a failure!
+
+services:
+  assessment-4-amq:
+    image: apache/activemq-artemis
+    container_name: assessment-4-amq
+    networks:
+      - assessment-4-amq
+    volumes:
+      - assessment-4-amq-data:/opt/activemq/data
+    ports:
+      - "61616:61616" # JMS
+      - "8161:8161"
+
+  assessment-4:
+    image: gate.ipb.pt:5050/dsys-assessment-2025-4:1.0.0
+    container_name: assessment-4
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    networks:
+      - assessment-4-amq
+    volumes:
+      - ./src:/src
+    environment:
+      token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBc3Nlc3NtZW50IDQgKDIwMjUpIiwidmFyaWFudFRpdGxlIjoiUmluZyBEaXZpZGUiLCJzdHVkZW50TnVtYmVyIjo1OTQ0MCwic3R1ZGVudE5hbWUiOiJCZWF0cml6IENydXoiLCJpc3MiOiJEU3lzIiwidmFyaWFudCI6InZhcmlhbnQtMiIsImlhdCI6MTc4MDQwNTkzOCwiYXNzZXNzbWVudElkIjoyNywianRpIjoiMDNjYjJlNzgtOTM4Ny00NjE5LWFlZDYtN2EyYWM1OGQ1ODk2IiwibWVtYmVySWQiOjE3NjA4fQ.7aroZo7AZsei1la1FVIx3KMyQbKAqZdpdzfjCn31ljo"
+      variant: "variant-2"
+    ports:
+      - "8989:8989"
+
+volumes:
+  assessment-4-amq-data: { }
+
+networks:
+  assessment-4-amq:
+
