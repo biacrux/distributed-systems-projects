@@ -1,0 +1,6 @@
+syntax = "proto3";
+option java_package = "pt.ipb.dsys.assessment.two";
+option java_multiple_files = true;
+
+// Use in place of `void`
+message Void {}

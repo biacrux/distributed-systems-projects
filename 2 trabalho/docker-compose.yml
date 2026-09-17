@@ -1,0 +1,16 @@
+# WARNING: Modifying this file will result in a failure!
+version: '3'
+
+services:
+  assessment-2025-2:
+    image: gate.ipb.pt:5050/dsys-assessment-2025-2:1.0.0
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    volumes:
+      - ./src:/src
+    environment:
+      token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBc3Nlc3NtZW50IDIgKDIwMjUpIiwidmFyaWFudFRpdGxlIjoiQmFuayBUcmFuc2ZlciBTZXJ2aWNlIiwic3R1ZGVudE51bWJlciI6NTk0NDAsInN0dWRlbnROYW1lIjoiQmVhdHJpeiBDcnV6IiwiaXNzIjoiRFN5cyIsInZhcmlhbnQiOiJ2YXJpYW50LTIiLCJpYXQiOjE3Nzc5ODYxODMsImFzc2Vzc21lbnRJZCI6MjUsImp0aSI6IjI5ODNjZjUyLTg2MjUtNGFmMS1iODEzLWEyNmRkNDExMWFlYyIsIm1lbWJlcklkIjoxNzYwOH0.SNS0Ww-WJ3hObqrYd-y6NrX5UTV0iH0_XcT9ZMER790"
+      variant: "variant-2"
+    ports:
+      - "8989:8989"
+      - "4444:4444"

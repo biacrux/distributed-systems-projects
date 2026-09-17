@@ -1,0 +1,21 @@
+syntax = "proto3";
+option java_package = "pt.ipb.dsys.assessment.two";
+option java_multiple_files = true;
+
+import "Common.proto";
+
+message TransferNotification {
+  // source account id
+  int64 src = 1;
+  // destination account id
+  int64 dst = 2;
+  // amount to transfer
+  double amount = 3;
+}
+
+service AnswerService {
+  /**
+   * Notifies the *bot* that a bank transfer finished or failed
+   */
+  rpc bankTransfer(TransferNotification) returns (Void);
+}
