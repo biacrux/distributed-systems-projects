@@ -5,8 +5,7 @@
 
 * **IntelliJ IDEA (Community, gratuito)**: https://www.jetbrains.com/idea/download/
 * JDK 17 ou 21 (o IntelliJ costuma sugerir a instalação automaticamente se não detetar nenhum)
-
-> Este projeto foi criado no IntelliJ IDEA (tem a pasta `.idea`). Não está configurado para correr diretamente no VS Code.
+* Instalar docker
 
 ## Como abrir e correr cada projeto
 
