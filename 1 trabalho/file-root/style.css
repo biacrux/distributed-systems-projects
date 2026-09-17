@@ -1,0 +1,19 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    background-color: #eee;
+    padding: 1em 2em;
+    height: 100%;
+}
+
+div, h1 {
+    font-family: sans-serif;
+}
+
+img {
+    border-radius: 1em;
+}
